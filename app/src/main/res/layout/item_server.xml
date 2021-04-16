@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardCornerRadius="20dip"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageViewOnOff"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@android:drawable/button_onoff_indicator_on" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewServerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/minecraft"
+                        android:text="Nom du serveur"
+                        android:textColor="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textViewServerIp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/minecraft"
+                            android:text="Ip du serveur"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/minecraft"
+                            android:text=":"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/textViewServerPort"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/minecraft"
+                            android:text="Port du serveur"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewMotd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/minecraft"
+                android:singleLine="false"
+                android:text="motd"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/textViewVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/minecraft"
+                android:text="Version"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/textViewPlayerCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/minecraft"
+                android:text="Nombre Joueurs"
+                android:textColor="@color/white" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/progressback"
+                android:paddingStart="4dp"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@color/white"
+                android:scrollbarSize="8dp" />
+
+            <TextView
+                android:id="@+id/textViewPlayerList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/minecraft"
+                android:text="@string/playerList"
+                android:textColor="@color/white" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvJoueurs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageFavicon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/buttonEdit"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:srcCompat="@drawable/mcbutton" />
+
+        <TextView
+            android:id="@+id/textViewEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/minecraft"
+            android:text="@string/edit"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonEdit"
+            app:layout_constraintEnd_toEndOf="@+id/buttonEdit"
+            app:layout_constraintStart_toStartOf="@+id/buttonEdit"
+            app:layout_constraintTop_toTopOf="@+id/buttonEdit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
